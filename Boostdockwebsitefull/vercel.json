@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "claim.boostdock.eu" }],
+      "destination": "/claim/index.html"
+    }
+  ]
+}

@@ -8,6 +8,7 @@ const CATEGORIES = {
       price: 1.1,
       currency: "EUR",
       image: "assets/products/boost-1.webp",
+      stripePriceId: "price_1UY33uE3W2ZkfW0P7LWwJ2Xe",
     },
     {
       id: "b5",
@@ -15,6 +16,7 @@ const CATEGORIES = {
       price: 5.5,
       currency: "EUR",
       image: "assets/products/boost-5.webp",
+      stripePriceId: "price_1UY34aE3W2ZkfW0Pe2gZlpRp",
     },
     {
       id: "b10",
@@ -23,13 +25,15 @@ const CATEGORIES = {
       currency: "EUR",
       image: "assets/products/boost-10.webp",
       featured: true,
+      stripePriceId: "price_1UY35ME3W2ZkfW0Pz4UzGJZT",
     },
     {
       id: "b15",
       name: "15 Server Boosts",
-      price: 16.5,
+      price: 17.5,
       currency: "EUR",
       image: "assets/products/boost-15.webp",
+      stripePriceId: "price_1UY366E3W2ZkfW0PWOy0Uc0X",
     },
   ],
   members: [
@@ -40,6 +44,7 @@ const CATEGORIES = {
       priceLabel: "From",
       currency: "USD",
       image: "assets/products/members-online.webp",
+      unavailable: true,
     },
     {
       id: "m-off",
@@ -48,6 +53,7 @@ const CATEGORIES = {
       priceLabel: "From",
       currency: "USD",
       image: "assets/products/members-offline.webp",
+      unavailable: true,
     },
   ],
   panel: [
@@ -82,7 +88,7 @@ const REVIEWS = [
 const FAQ = [
   {
     q: "Are your Discord boosts cheap and safe?",
-    a: "Our 15-boost pack is €16.50 for a month vs about €70 through Discord retail. We only need your invite link, never your login. If boosts drop before your paid period ends, we replace them.",
+    a: "Our 15-boost pack is €17.50 for a month vs about €70 through Discord retail. We only need your invite link, never your login. If boosts drop before your paid period ends, we replace them.",
   },
   {
     q: "How fast is delivery?",
@@ -133,7 +139,9 @@ function renderProducts(category) {
           p.unavailable
             ? `<p class="product-unavailable">Temporarily unavailable</p>
         <button type="button" class="product-buy" disabled aria-disabled="true">Buy Now</button>`
-            : `<button type="button" class="product-buy" data-purchase data-name="${p.name}">Buy Now</button>`
+            : `<button type="button" class="product-buy" data-purchase data-name="${p.name}"${
+                p.stripePriceId ? ` data-price-id="${p.stripePriceId}"` : ""
+              }>Buy Now</button>`
         }
       </div>
     </article>
@@ -250,9 +258,34 @@ function initPromo() {
   });
 }
 
-document.body.addEventListener("click", (e) => {
+document.body.addEventListener("click", async (e) => {
   const btn = e.target.closest("[data-purchase]");
-  if (btn) showToast(`${btn.dataset.name} — connect checkout to go live.`);
+  if (!btn || btn.disabled) return;
+
+  const priceId = btn.dataset.priceId;
+  if (!priceId) {
+    showToast(`${btn.dataset.name} — checkout not available yet.`);
+    return;
+  }
+
+  btn.disabled = true;
+  const label = btn.textContent;
+  btn.textContent = "Loading…";
+
+  try {
+    const res = await fetch("/api/create-checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ priceId }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.url) throw new Error("checkout failed");
+    window.location.href = data.url;
+  } catch {
+    showToast("Could not start checkout. Try again.");
+    btn.disabled = false;
+    btn.textContent = label;
+  }
 });
 
 document.querySelector("[data-year]").textContent = String(new Date().getFullYear());

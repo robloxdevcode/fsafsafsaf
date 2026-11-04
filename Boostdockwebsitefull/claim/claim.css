@@ -1,0 +1,96 @@
+.claim-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px var(--gutter, 20px);
+  gap: 16px;
+}
+
+.claim-gate {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ez-dim);
+}
+
+.claim-card {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  padding: 40px 32px 36px;
+  background: var(--ez-surface);
+  border: 1px solid var(--ez-line);
+  border-radius: 24px;
+  box-shadow: 0 24px 80px #00000066;
+}
+
+.claim-logo {
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.claim-badge {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ez-green);
+  background: #3ba55c22;
+  border: 1px solid #3ba55c44;
+  border-radius: 999px;
+}
+
+.claim-card h1 {
+  margin: 0 0 14px;
+  font-size: clamp(1.75rem, 5vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.claim-lead {
+  margin: 0 0 24px;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ez-dim);
+}
+
+.claim-discord {
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: var(--gradient-button);
+  transition: background 0.2s;
+}
+
+.claim-discord:hover {
+  background: var(--gradient-button-hover);
+}
+
+.claim-hint {
+  margin: 20px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ez-faint);
+}
+
+.claim-back {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ez-violet);
+  text-decoration: none;
+}
+
+.claim-back:hover {
+  text-decoration: underline;
+}
