@@ -886,7 +886,7 @@ button {
 
 .footer-main {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) repeat(2, minmax(0, 0.7fr));
+  grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 0.65fr));
   gap: 40px;
   margin-bottom: 28px;
   width: min(var(--ez-content), 100% - 2 * var(--gutter));
@@ -931,6 +931,66 @@ button {
   color: var(--ez-faint);
   font-size: 13px;
   padding: 0 var(--gutter);
+}
+
+.legal-page {
+  min-height: 100vh;
+  padding: 48px var(--gutter) 80px;
+}
+
+.legal-doc {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 36px 32px 40px;
+  background: var(--ez-surface);
+  border: 1px solid var(--ez-line);
+  border-radius: 20px;
+}
+
+.legal-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ez-violet);
+  text-decoration: none;
+}
+
+.legal-back:hover {
+  text-decoration: underline;
+}
+
+.legal-doc h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+.legal-updated {
+  margin: 0 0 24px;
+  font-size: 13px;
+  color: var(--ez-faint);
+}
+
+.legal-doc h2 {
+  margin: 28px 0 10px;
+  font-size: 1.15rem;
+}
+
+.legal-doc p,
+.legal-doc li {
+  color: var(--ez-dim);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.legal-doc ul,
+.legal-doc ol {
+  margin: 0 0 16px;
+  padding-left: 1.25rem;
+}
+
+.legal-doc a {
+  color: var(--ez-violet);
 }
 
 .toast {
