@@ -7,12 +7,19 @@
   "rewrites": [
     {
       "source": "/claim/e823rh24f24irui",
-      "destination": "/claim/index.html"
+      "destination": "/c823rh24f24irui/index.html"
+    },
+    {
+      "source": "/claim/c823rh24f24irui",
+      "destination": "/c823rh24f24irui/index.html"
+    },
+    {
+      "source": "/c823rh24f24irui",
+      "destination": "/c823rh24f24irui/index.html"
     },
     {
       "source": "/e823rh24f24irui",
-      "has": [{ "type": "host", "value": "claim.boostdock.eu" }],
-      "destination": "/claim/index.html"
+      "destination": "/c823rh24f24irui/index.html"
     },
     {
       "source": "/",

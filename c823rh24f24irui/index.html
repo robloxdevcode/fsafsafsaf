@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-ground="flat" data-claim-preview="1">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex" />
+  <title>Claim your order | BoostDock</title>
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/claim/claim.css" />
+</head>
+<body>
+  <div class="galaxy claim-page">
+    <div class="galaxy-spotlight" aria-hidden="true"></div>
+    <p class="claim-gate" aria-live="polite">Checking your payment…</p>
+    <p class="claim-error" hidden></p>
+    <p class="claim-preview-note" hidden>Preview only. This is not a real payment.</p>
+    <main class="claim-card" hidden aria-labelledby="claim-title">
+      <img class="claim-logo" src="/assets/logo.png" width="56" height="56" alt="" />
+      <p class="claim-badge">Payment received</p>
+      <h1 id="claim-title">One last step</h1>
+      <p class="claim-lead">
+        Your payment went through. Join our Discord server and claim your purchase there.
+        We are quick — most orders start within minutes.
+      </p>
+      <a class="claim-discord" href="https://discord.gg/boostdock" target="_blank" rel="noopener noreferrer">
+        Join discord.gg/boostdock
+      </a>
+      <p class="claim-hint">
+        After you join, follow the claim instructions in the server so we can deliver to your invite link.
+      </p>
+      <a class="claim-back" href="https://boostdock.eu/">Back to BoostDock</a>
+    </main>
+  </div>
+  <script src="/claim/claim.js"></script>
+</body>
+</html>

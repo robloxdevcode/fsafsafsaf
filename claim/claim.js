@@ -1,7 +1,7 @@
 (function () {
   const HOME = "https://boostdock.eu/";
   const DISCORD = "https://discord.gg/boostdock";
-  const PREVIEW_PATH = "/e823rh24f24irui";
+  const PREVIEW_PATHS = ["/e823rh24f24irui", "/c823rh24f24irui"];
   const params = new URLSearchParams(window.location.search);
   const sessionId = (params.get("session_id") || "").trim();
   const card = document.querySelector(".claim-card");
@@ -10,7 +10,9 @@
   const previewNote = document.querySelector(".claim-preview-note");
 
   const path = window.location.pathname.replace(/\/$/, "") || "/";
-  const isPreview = path === PREVIEW_PATH || path.endsWith(PREVIEW_PATH);
+  const isPreview =
+    document.documentElement.dataset.claimPreview === "1" ||
+    PREVIEW_PATHS.some((p) => path === p || path.endsWith(p) || path.endsWith(`/claim${p}`));
 
   function showClaimCard(preview) {
     if (gate) gate.hidden = true;
