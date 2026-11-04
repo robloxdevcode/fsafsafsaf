@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-ground="flat">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="BoostDock — cheap Discord server boosts, members, Nitro, and boost panel. Instant delivery inspired by top boost shops." />
+  <title>BoostDock | Cheap Discord Server Boosts & Nitro</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="promo-bar">
+    <div class="promo-inner">
+      <img src="https://liteboosts.com/gem.webp" width="22" height="22" alt="" />
+      <span><strong>Save 10%</strong> store-wide · use code <code>DOCK10</code> at checkout</span>
+      <button type="button" class="promo-copy" data-copy-code data-code="DOCK10">Copy Code</button>
+      <button type="button" class="promo-dismiss" data-dismiss-promo aria-label="Dismiss promo">×</button>
+    </div>
+  </div>
+
+  <div class="galaxy">
+    <div class="galaxy-spotlight" aria-hidden="true"></div>
+    <div class="nav-shell">
+      <header class="navbar" id="top">
+        <a class="brand" href="#top">
+          <img class="brand-logo" src="assets/logo.png" width="34" height="34" alt="" />
+          BoostDock
+        </a>
+        <nav class="nav-links" data-mobile-nav>
+          <ul>
+            <li><a href="#top" aria-current="page">Home</a></li>
+            <li><a href="#shop">Products</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <a class="shop-button" href="#shop">Shop Boosts</a>
+        <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" data-nav-toggle>
+          <img src="https://ezboost.org/assets/images/menu.svg" width="24" height="24" alt="" />
+        </button>
+      </header>
+    </div>
+
+    <div class="page-wrap">
+      <main>
+        <section class="hero" aria-label="Discord server boosts">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <h1 class="hero-title">
+                Boost your server.<br />
+                <span class="hero-gradient">Skip Discord retail.</span>
+              </h1>
+              <p class="hero-lead">
+                We are brand new. The prices are super cheap. You should buy from us — it is cheaper than anywhere else.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#shop">Browse Packages</a>
+              </div>
+              <ul class="hero-trust">
+                <li>Only your server invite, never your password</li>
+                <li>Full replacement warranty on every pack</li>
+              </ul>
+              <div class="pay-icons" aria-label="Payment methods">
+                <img src="https://ezboost.org/assets/images/visa.svg" alt="Visa" />
+                <img src="https://ezboost.org/assets/images/mastercard.svg" alt="Mastercard" />
+                <img src="https://ezboost.org/assets/images/paypal.svg" alt="PayPal" />
+                <img src="https://liteboosts.com/payment/ApplePay.png" alt="Apple Pay" />
+                <img src="https://liteboosts.com/payment/GooglePay.png" alt="Google Pay" />
+              </div>
+            </div>
+            <div class="hero-visual hero-visual--crop">
+              <div class="hero-glow" aria-hidden="true"></div>
+              <img
+                class="hero-wumpus"
+                src="https://ezboost.org/assets/images/wumpus-nitro-thinking-800.webp"
+                srcset="
+                  https://ezboost.org/assets/images/wumpus-nitro-thinking-400.webp 400w,
+                  https://ezboost.org/assets/images/wumpus-nitro-thinking-600.webp 600w,
+                  https://ezboost.org/assets/images/wumpus-nitro-thinking-800.webp 800w
+                "
+                sizes="(max-width: 640px) 190px, (max-width: 991px) 260px, 400px"
+                alt=""
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="shop" id="shop" aria-label="Choose your boost pack">
+          <header class="shop-header">
+            <p class="section-eyebrow">Pricing</p>
+            <h2 class="shop-title">Choose your <span class="hero-gradient">package</span></h2>
+            <p class="shop-desc">
+              Server boosts from <strong>1.10 EUR</strong> (€0.10 off per boost vs standard tiers), plus members and boost panel tools.
+            </p>
+          </header>
+
+          <div class="shop-tabs" role="tablist" aria-label="Product categories">
+            <ul>
+              <li><button type="button" class="shop-tab is-active" role="tab" aria-selected="true" data-category="boost-1m"><img src="https://ezboost.org/assets/images/boost.svg" alt="" />1 Month Server Boosts</button></li>
+              <li><button type="button" class="shop-tab" role="tab" aria-selected="false" data-category="members"><img src="https://ezboost.org/assets/images/members.svg" alt="" />Member Boost</button></li>
+              <li><button type="button" class="shop-tab" role="tab" aria-selected="false" data-category="panel"><img src="https://ezboost.org/assets/images/bot.svg" alt="" />Boost Panel</button></li>
+            </ul>
+          </div>
+
+          <div class="product-grid" data-product-grid></div>
+        </section>
+
+        <section class="reviews" id="reviews" aria-label="Customer feedback">
+          <div class="reviews-head">
+            <div>
+              <h2>Customer feedback</h2>
+              <p class="reviews-sub">1 real vouch from a BoostDock customer.</p>
+            </div>
+          </div>
+          <div class="reviews-showcase">
+            <div class="reviews-track reviews-track--static" data-reviews-track></div>
+          </div>
+        </section>
+
+        <section class="faq" id="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-list" data-faq-list></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-main">
+          <div>
+            <div class="footer-brand">
+              <img src="assets/logo.png" width="32" height="32" alt="" />
+              <span>BoostDock</span>
+            </div>
+            <p class="footer-desc">Cheap Discord boosts, members, Nitro, and boost panel. Fast delivery, full warranty, 24/7 support.</p>
+          </div>
+          <div>
+            <h3>Navigate</h3>
+            <a href="#shop">Products</a>
+            <a href="#shop" data-tab-link="panel">Boost Panel</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <div>
+            <h3>Support</h3>
+            <a href="#">Discord Support</a>
+            <a href="mailto:support@boostdock.example">support@boostdock.example</a>
+          </div>
+        </div>
+        <p class="footer-disclaimer">Disclaimer: Not affiliated with Discord Inc.</p>
+        <p class="footer-copy">&copy; <span data-year></span> BoostDock. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite" data-toast hidden></div>
+  <script src="script.js"></script>
+</body>
+</html>

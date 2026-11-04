@@ -1,0 +1,5 @@
+{
+  "name": "boostdock",
+  "private": true,
+  "description": "Static BoostDock storefront (HTML/CSS/JS + Vercel serverless API)"
+}
