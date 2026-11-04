@@ -32,6 +32,20 @@
   font-weight: 600;
 }
 
+.claim-preview-note {
+  max-width: 480px;
+  margin: 0 0 12px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fbbf24;
+  background: #fbbf2418;
+  border: 1px solid #fbbf2444;
+  border-radius: 999px;
+}
+
 .claim-card {
   width: 100%;
   max-width: 480px;

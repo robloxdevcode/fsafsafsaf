@@ -6,6 +6,15 @@
   "outputDirectory": ".",
   "rewrites": [
     {
+      "source": "/claim/e823rh24f24irui",
+      "destination": "/claim/index.html"
+    },
+    {
+      "source": "/e823rh24f24irui",
+      "has": [{ "type": "host", "value": "claim.boostdock.eu" }],
+      "destination": "/claim/index.html"
+    },
+    {
       "source": "/",
       "has": [{ "type": "host", "value": "claim.boostdock.eu" }],
       "destination": "/claim/index.html"

@@ -1,11 +1,23 @@
 (function () {
   const HOME = "https://boostdock.eu/";
   const DISCORD = "https://discord.gg/boostdock";
+  const PREVIEW_PATH = "/e823rh24f24irui";
   const params = new URLSearchParams(window.location.search);
   const sessionId = (params.get("session_id") || "").trim();
   const card = document.querySelector(".claim-card");
   const gate = document.querySelector(".claim-gate");
   const errEl = document.querySelector(".claim-error");
+  const previewNote = document.querySelector(".claim-preview-note");
+
+  const path = window.location.pathname.replace(/\/$/, "") || "/";
+  const isPreview = path === PREVIEW_PATH || path.endsWith(PREVIEW_PATH);
+
+  function showClaimCard(preview) {
+    if (gate) gate.hidden = true;
+    if (errEl) errEl.hidden = true;
+    if (previewNote) previewNote.hidden = !preview;
+    if (card) card.hidden = false;
+  }
 
   function showError(msg) {
     if (gate) gate.hidden = true;
@@ -13,6 +25,11 @@
       errEl.hidden = false;
       errEl.innerHTML = msg;
     }
+  }
+
+  if (isPreview) {
+    showClaimCard(true);
+    return;
   }
 
   if (!sessionId || !sessionId.startsWith("cs_")) {
@@ -59,8 +76,6 @@
 
   verify().then((ok) => {
     if (!ok) return;
-    if (gate) gate.hidden = true;
-    if (errEl) errEl.hidden = true;
-    if (card) card.hidden = false;
+    showClaimCard(false);
   });
 })();
